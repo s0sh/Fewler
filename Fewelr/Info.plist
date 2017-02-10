@@ -27,16 +27,16 @@
 			<string></string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb166380390375893</string>
+				<string>fb244564675952942</string>
 			</array>
 			<key>CFBundleURLTypes</key>
-			<string>fb166380390375893</string>
+			<string>fb244564675952942</string>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>FacebookAppID</key>
-	<string>166380390375893</string>
+	<string>244564675952942</string>
 	<key>FacebookDisplayName</key>
 	<string>Fewelr</string>
 	<key>LSApplicationCategoryType</key>

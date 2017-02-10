@@ -91,7 +91,7 @@
     {
         NSLog(@"Token is available : %@",[[FBSDKAccessToken currentAccessToken]tokenString]);
         
-        [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"id, name, link, first_name, last_name, picture.type(large), email, birthday, bio ,location ,friends ,hometown , friendlists"}]
+        [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"id, name, link, first_name, last_name, picture.type(large), email, birthday,location ,friends ,hometown , friendlists"}]
          startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
              if (!error)
              {
@@ -106,37 +106,37 @@
 
 /**************** comment this block to simulate lack of email address ******************/
                      
-                     [[ApiCall sharedInstance] registrationWithFaceBook:self.fbTokenString
-                                                                AndFBID:self.fbUserID
-                                                          resultSuccess:^(NSDictionary *token) {
-                                                              
-                                                              if ([[NSString stringWithFormat:@"%@",token[@"success"]] isEqualToString:@"1"] ) {
+[[ApiCall sharedInstance] registrationWithFaceBook:self.fbTokenString
+                            AndFBID:self.fbUserID
+                      resultSuccess:^(NSDictionary *token) {
+                          
+                          if ([[NSString stringWithFormat:@"%@",token[@"success"]] isEqualToString:@"1"] ) {
+                              
+                              [ModalClass sharedInstance].serverToken = token[@"restToken"];
+                              
+                              if ([self checkMarkerThatEmailAlreadyHadBeenSentToTheServer])
+                              {
+                                  [APP makeMapRootController];
+                              }
+                              else
+                              {
+                                  [[ApiCall sharedInstance] updateUserEmail: self.emailField.text
+                                                              resultSuccess:^(NSDictionary *success) {
                                                                   
-                                                                  [ModalClass sharedInstance].serverToken = token[@"restToken"];
+                                                                  NSLog(@">emailSentOk");
                                                                   
-                                                                  if ([self checkMarkerThatEmailAlreadyHadBeenSentToTheServer])
-                                                                  {
-                                                                      [APP makeMapRootController];
-                                                                  }
-                                                                  else
-                                                                  {
-                                                                      [[ApiCall sharedInstance] updateUserEmail: self.emailField.text
-                                                                                                  resultSuccess:^(NSDictionary *success) {
-                                                                                                      
-                                                                                                      NSLog(@">emailSentOk");
-                                                                                                      
-                                                                                                      [self setMarkerThatEmailAlreadyHadBeenSentToTheServer:self.emailField.text];
-                                                                                                      [APP makeMapRootController];
-                                                                                                  }
-                                                                                                   resultFailed:^(NSString * fail) {
-                                                                                                       
-                                                                                                       NSLog(@">emailSentFail");
-                                                                                                   }];
-                                                                  }
+                                                                  [self setMarkerThatEmailAlreadyHadBeenSentToTheServer:self.emailField.text];
+                                                                  [APP makeMapRootController];
                                                               }
-                                                          } resultFailed:^(NSString *fail) {
-                                                              
-                                                          }];
+                                                               resultFailed:^(NSString * fail) {
+                                                                   
+                                                                   NSLog(@">emailSentFail");
+                                                               }];
+                              }
+                          }
+                      } resultFailed:^(NSString *fail) {
+                          
+                      }];
                      
 /****************************************************************************************/
                      

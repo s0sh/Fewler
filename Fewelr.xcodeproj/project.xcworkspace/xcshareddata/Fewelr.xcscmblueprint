@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3C2AEA92A7C6E4266DE5FC9CC8FFA3CB16CF9FF7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6F3E6DE3B8DCF56CEBDDCF61B715774516431DEA" : 9223372036854775807,
+    "3C2AEA92A7C6E4266DE5FC9CC8FFA3CB16CF9FF7" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6B383B43-7287-419F-8CA4-A63E1A77D5F8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6F3E6DE3B8DCF56CEBDDCF61B715774516431DEA" : "",
+    "3C2AEA92A7C6E4266DE5FC9CC8FFA3CB16CF9FF7" : "Fewler\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Fewelr",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Fewelr.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/s0sh\/Fewler.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3C2AEA92A7C6E4266DE5FC9CC8FFA3CB16CF9FF7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/Engbub\/wb-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6F3E6DE3B8DCF56CEBDDCF61B715774516431DEA"
+    }
+  ]
+}

@@ -343,6 +343,10 @@
 -(void)registrationWithFaceBook:(NSString *)token AndFBID:(NSString *)fbID  resultSuccess:(void (^)(NSDictionary *))success resultFailed:(void (^)(NSString *))failed{
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+   
+    if ( appDelegate.deviceToken == nil)
+        appDelegate.deviceToken = @"dvad8f9w4fednjn;av98uq3befca";
+    
     
     NSDictionary *dc = [NSDictionary dictionaryWithObjectsAndKeys:
                         
